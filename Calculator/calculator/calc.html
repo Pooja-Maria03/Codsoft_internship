@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc.html</title>
+
+    <!-- my css -->
+    <link rel="stylesheet" href="calc.css">
+
+    <!-- my js -->
+    <script src="calc.js"></script>
+
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- bootstrap jss -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+   <div class="head">
+    <h1>MINI CALCULATOR</h1>
+   </div> 
+    <div class="calc-big">
+        <div class="calc-small">
+            <div id="display">
+
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item"><button type="button" class="btn btn-warning" id="one" class="num" onclick="appendToDisplay('1')">1</button></div>
+            <div class="grid-item"><button type="button" class="btn btn-warning" id="two" class="num" onclick="appendToDisplay('2')">2</button></div>
+            <div class="grid-item"><button type="button" class="btn btn-warning" id="three" class="num" onclick="appendToDisplay('3')">3</button></div>
+            <div class="grid-item"><button type="button" class="btn btn-warning" id="four" class="num" onclick="appendToDisplay('4')">4</button></div>
+            <div class="grid-item"><button type="button" class="btn btn-warning" id="five" class="num" onclick="appendToDisplay('5')">5</button></div>
+            <div class="grid-item"><button type="button" class="btn btn-warning" id="six" class="num" onclick="appendToDisplay('6')">6</button></div>
+            <div class="grid-item"><button type="button" class="btn btn-warning" id="seven" class="num" onclick="appendToDisplay('7')">7</button></div>
+            <div class="grid-item"><button type="button" class="btn btn-warning" id="eight" class="num" onclick="appendToDisplay('8')">8</button></div>
+            <div class="grid-item"><button type="button" class="btn btn-warning" id="nine" class="num" onclick="appendToDisplay('9')">9</button></div>
+            <div class="grid-item"><button type="button" class="btn btn-warning" id="zero" class="num" onclick="appendToDisplay('0')">0</button></div>
+            <div class="grid-item"><button type="button" class="btn btn-info" id="plus" class="num" onclick="appendToDisplay('+')">+</button></div>
+            <div class="grid-item"><button type="button" class="btn btn-info" id="min" class="num" onclick="appendToDisplay('-')">-</button></div>
+            <div class="grid-item"><button type="button" class="btn btn-info" id="mul" class="num" onclick="appendToDisplay('*')">*</button></div>
+            <div class="grid-item"><button type="button" class="btn btn-info" id="div" class="num" onclick="appendToDisplay('/')">/</button></div>
+            <div class="grid-item"><button type="button" class="btn btn-success" id="eq" class="num" onclick="calculateResult()">=</button></div>
+          </div>
+          <div class="clear">
+            <button type="button" class="btn btn-danger btnc" id="clear" class="num" onclick="clearDisplay()">CLEAR ALL</button>
+          </div>
+    </div>
+    <script>
+        let display = document.getElementById('display');
+
+function appendToDisplay(value) {
+  display.textContent += value;
+}
+
+function clearDisplay() {
+  display.textContent = '';
+}
+
+function calculateResult() {
+  try {
+    display.textContent = eval(display.textContent);
+  } catch (error) {
+    display.textContent = 'Error';
+  }
+}
+    </script>
+</body>
+</html>
+
